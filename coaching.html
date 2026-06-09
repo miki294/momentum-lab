@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>コーチングプログラム | Momentum Lab</title>
+<meta name="description" content="パーソナルコーチング・エグゼクティブコーチングのプログラム詳細と料金 — 松生美紀 / Momentum Lab">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Playfair+Display:wght@300;400&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --sage:#6FAFAD;
+  --sage-dark:#3E6B61;
+  --lavender:#A59ACA;
+  --blush:#F6C1CC;
+  --peach:#F29958;
+  --cream:#FAFAF7;
+  --white:#FFFFFF;
+  --charcoal:#2C2C2A;
+  --muted:#5a5955;
+  --light:#F1EFE8;
+  --border:rgba(44,44,42,0.1);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans JP',sans-serif;background:var(--cream);color:var(--charcoal);line-height:1.8;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 3rem;display:flex;justify-content:space-between;align-items:center;background:rgba(250,250,247,0.94);backdrop-filter:blur(10px);border-bottom:0.5px solid var(--border)}
+.nav-logo{font-family:'Playfair Display','Cormorant Garamond',serif;font-size:1rem;letter-spacing:0.22em;color:var(--charcoal);text-decoration:none;font-weight:400}
+.nav-logo span{color:var(--sage)}
+.nav-back{font-size:0.75rem;letter-spacing:0.12em;color:var(--muted);text-decoration:none;transition:color 0.25s}
+.nav-back:hover{color:var(--charcoal)}
+
+/* PAGE HERO */
+.page-hero{padding:8rem 3rem 4rem;max-width:960px;margin:0 auto}
+.page-label{font-size:0.65rem;letter-spacing:0.3em;color:var(--sage);text-transform:uppercase;margin-bottom:1rem;font-weight:500}
+.page-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3vw,2.8rem);font-weight:300;line-height:1.3;margin-bottom:1.5rem}
+.page-title em{font-style:italic;color:var(--lavender)}
+.page-lead{font-size:0.88rem;color:var(--muted);line-height:2.3;max-width:600px;font-weight:300}
+
+/* SECTION */
+.section{padding:5rem 3rem}
+.section-inner{max-width:960px;margin:0 auto}
+.section-label{font-size:0.65rem;letter-spacing:0.3em;color:var(--sage);text-transform:uppercase;margin-bottom:1rem;font-weight:500}
+.section-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.5rem,2.5vw,2rem);font-weight:300;margin-bottom:2.5rem;line-height:1.4}
+.section-title em{font-style:italic;color:var(--lavender)}
+
+/* FLOW */
+.flow-list{display:flex;flex-direction:column;gap:0;margin-bottom:3rem}
+.flow-item{display:grid;grid-template-columns:2.5rem 1fr;gap:1rem;padding:1.5rem 0;border-bottom:0.5px solid var(--border)}
+.flow-item:first-child{border-top:0.5px solid var(--border)}
+.flow-num{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--lavender);font-weight:300;line-height:1;padding-top:0.2rem}
+.flow-title{font-size:0.85rem;font-weight:500;margin-bottom:0.35rem}
+.flow-detail{font-size:0.78rem;color:var(--muted);line-height:1.9;font-weight:300}
+
+/* PERSONAL PRICING */
+.pricing-bg{background:var(--white)}
+.pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.price-intro{font-size:0.82rem;color:var(--muted);line-height:2.2;margin-bottom:2rem;font-weight:300}
+.price-intro strong{color:var(--charcoal);font-weight:500}
+.price-single{border:0.5px solid var(--border);padding:1.5rem 2rem;margin-bottom:1.5rem}
+.price-single-label{font-size:0.65rem;letter-spacing:0.2em;color:var(--muted);text-transform:uppercase;margin-bottom:0.5rem;font-weight:500}
+.price-single-val{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;color:var(--charcoal)}
+.price-single-unit{font-size:0.72rem;color:var(--muted);margin-left:0.4rem}
+.plan-list{display:flex;flex-direction:column;gap:0.8rem;margin-bottom:1.5rem}
+.plan-card{border:0.5px solid var(--border);padding:1.5rem 2rem;position:relative}
+.plan-card.featured{border-color:var(--sage);border-width:1.5px}
+.plan-badge{position:absolute;top:-1px;right:1.5rem;background:var(--sage);color:white;font-size:0.62rem;letter-spacing:0.12em;padding:0.25rem 0.7rem;transform:translateY(-50%)}
+.plan-name{font-size:0.78rem;font-weight:500;margin-bottom:0.3rem}
+.plan-sessions{font-size:0.72rem;color:var(--muted);margin-bottom:0.8rem;font-weight:300}
+.plan-price-row{display:flex;align-items:baseline;gap:0.5rem}
+.plan-price{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:300}
+.plan-unit{font-size:0.68rem;color:var(--muted)}
+.plan-save{font-size:0.65rem;color:var(--sage);font-weight:500;margin-left:auto;letter-spacing:0.06em}
+.price-note{font-size:0.72rem;color:var(--muted);line-height:2;font-weight:300}
+
+/* EXECUTIVE */
+.executive-bg{background:var(--cream)}
+.executive-card{border:1px solid var(--charcoal);padding:3rem;max-width:720px}
+.executive-label{font-size:0.65rem;letter-spacing:0.3em;color:var(--peach);text-transform:uppercase;margin-bottom:1rem;font-weight:500}
+.executive-title{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:300;margin-bottom:1.5rem;line-height:1.4}
+.executive-features{display:flex;flex-direction:column;gap:1.2rem;margin-bottom:2rem}
+.executive-feature{display:flex;gap:1rem;align-items:start}
+.executive-feature-dot{width:4px;height:4px;border-radius:50%;background:var(--peach);flex-shrink:0;margin-top:0.65rem}
+.executive-feature-text{font-size:0.82rem;color:var(--muted);line-height:1.9;font-weight:300}
+.executive-feature-text strong{color:var(--charcoal);font-weight:500}
+.executive-price{display:flex;align-items:baseline;gap:0.5rem;margin-bottom:0.5rem}
+.executive-price-val{font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300}
+.executive-price-unit{font-size:0.72rem;color:var(--muted)}
+.executive-note{font-size:0.75rem;color:var(--muted);font-weight:300;margin-bottom:2rem}
+
+/* BTN */
+.btn{display:inline-block;padding:0.85rem 2rem;font-size:0.78rem;letter-spacing:0.12em;text-decoration:none;transition:all 0.3s;font-family:'Noto Sans JP',sans-serif;border:none;white-space:nowrap}
+.btn-primary{background:var(--sage);color:white}
+.btn-primary:hover{background:var(--sage-dark)}
+.btn-outline{background:transparent;color:var(--charcoal);border:1px solid rgba(44,44,42,0.35)}
+.btn-outline:hover{background:var(--charcoal);color:var(--cream)}
+
+/* STANCE */
+.stance{background:var(--white)}
+.stance-text{font-size:0.82rem;color:var(--muted);line-height:2.3;font-weight:300;max-width:640px}
+.stance-note{font-size:0.75rem;color:var(--muted);line-height:2;margin-top:1.5rem;padding-top:1.5rem;border-top:0.5px solid var(--border);font-weight:300}
+
+/* FOOTER */
+footer{background:var(--charcoal);border-top:0.5px solid rgba(255,255,255,0.06);padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center}
+.footer-logo{font-family:'Playfair Display','Cormorant Garamond',serif;font-size:0.88rem;letter-spacing:0.22em;color:rgba(250,250,247,0.4);font-weight:400}
+.footer-note{font-size:0.68rem;color:rgba(250,250,247,0.25);letter-spacing:0.08em}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  nav{padding:1rem 1.5rem}
+  .page-hero{padding:6rem 1.5rem 3rem}
+  .section{padding:4rem 1.5rem}
+  .pricing-grid{grid-template-columns:1fr;gap:2rem}
+  .executive-card{padding:2rem}
+  footer{flex-direction:column;gap:0.8rem;text-align:center;padding:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">Momentum <span>Lab</span></a>
+  <a href="index.html" class="nav-back">← トップに戻る</a>
+</nav>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="page-label">Coaching Program</div>
+  <h1 class="page-title">コーチングは、答えを教わる場所ではなく、<br><em>あなた自身の核をコーチと共に発見する</em>場です。</h1>
+  <p class="page-lead">コーチングは、答えを教わる場所ではなく、あなた自身のリーダーシップを発見し、行動と思考を根っこから変えていく場です。</p>
+  <p class="page-lead" style="margin-top:1.2rem">リーダーシップとは役割のことではありません。自身を導くこともリーダーシップの一部。芯があってぶれないリーダーは、しなやかでいられる。そして強いリーダーほど、人に優しくなれる。リーダーとして組織の現場でジレンマを抱え、悩み、それでも前に進んできた。その経験があるから、あなたの隣に立てると思っています。</p>
+  <p class="page-lead" style="margin-top:1.2rem">AIが業務を効率化する時代だからこそ、人と向き合う質が結果を分けます。AIコーチングにできないことがあります——感情の揺れ、体の感覚、沈黙の重さ。生身の人間同士の対話だからこそ生まれる、ふとした瞬間の気づきや直感。コーチ自身がリーダーとして現場で積んできた経験と直感も、セッションにフル活用されます。</p>
+</div>
+
+<!-- セッションの流れ -->
+<section class="section" style="background:var(--white);padding-top:3rem">
+  <div class="section-inner">
+    <div class="section-label">Session Flow</div>
+    <h2 class="section-title">セッションの流れ</h2>
+    <div class="flow-list">
+      <div class="flow-item">
+        <div class="flow-num">1</div>
+        <div class="flow-content">
+          <div class="flow-title">導入セッション（90分）</div>
+          <div class="flow-detail">コーチングの土台を作る大切なセッションです。対面での実施を推奨。コーチングとは何か、どんなテーマを扱えるか、どんなペースで進めるか。お互いにどんな価値観を持った人なのか、複数回のセッションを通した大きなゴールは何か、今の現在地はどこかを一緒に確認します。</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-num">2</div>
+        <div class="flow-content">
+          <div class="flow-title">コーチングセッション（60分 × 6回）</div>
+          <div class="flow-detail">3〜4週間ごとのペース。毎回クライアントが話したい・気になるテーマを持ち寄って、そこを出発点にします。オンライン（Zoom）実施。<br>テーマ例：ワークライフバランス、自分のリーダーシップスタイル、価値観の異なる人との関わり方、難しい意思決定</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-num">3</div>
+        <div class="flow-content">
+          <div class="flow-title">継続パッケージ（Continuation Package）</div>
+          <div class="flow-detail">プログラム終了後も続けたい方向け。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- パーソナルコーチング 料金 -->
+<section id="personal" class="section pricing-bg">
+  <div class="section-inner">
+    <div class="section-label">Personal Coaching</div>
+    <h2 class="section-title">パーソナルコーチング<br>料金プラン</h2>
+    <div class="pricing-grid">
+      <div>
+        <p class="price-intro">継続することへのコミットが、変化を加速させます。<strong>パッケージは単発より割引価格</strong>でご提供しています。</p>
+        <div class="price-single">
+          <div class="price-single-label">単発セッション</div>
+          <div>
+            <span class="price-single-val">¥15,000</span>
+            <span class="price-single-unit">/ 時間（税別）</span>
+          </div>
+          <div style="font-size:0.72rem;color:var(--muted);margin-top:0.3rem">総額 ¥15,000（税別）</div>
+        </div>
+        <div class="plan-list">
+          <div class="plan-card">
+            <div class="plan-name">Light Start</div>
+            <div class="plan-sessions">導入90分 + コーチング60分 × 3回　（2〜3ヶ月集中プラン）</div>
+            <div class="plan-price-row">
+              <span class="plan-price">¥14,000</span>
+              <span class="plan-unit">/ 時間（税別）</span>
+              <span class="plan-save">▲ 7% お得</span>
+            </div>
+            <div style="font-size:0.72rem;color:var(--muted);margin-top:0.4rem">総額 ¥63,000（税別）</div>
+          </div>
+          <div class="plan-card featured">
+            <div class="plan-badge">おすすめ</div>
+            <div class="plan-name">Momentum Program</div>
+            <div class="plan-sessions">導入90分 + コーチング60分 × 6回　（約5ヶ月）</div>
+            <div class="plan-price-row">
+              <span class="plan-price">¥12,000</span>
+              <span class="plan-unit">/ 時間（税別）</span>
+              <span class="plan-save">▲ 20% お得</span>
+            </div>
+            <div style="font-size:0.72rem;color:var(--muted);margin-top:0.4rem">総額 ¥90,000（税別）</div>
+          </div>
+          <div class="plan-card">
+            <div class="plan-name">Continuation Package</div>
+            <div class="plan-sessions">コーチング60分 × 6回</div>
+            <div class="plan-price-row">
+              <span class="plan-price">¥12,000</span>
+              <span class="plan-unit">/ 時間（税別）</span>
+              <span class="plan-save">▲ 20% お得</span>
+            </div>
+            <div style="font-size:0.72rem;color:var(--muted);margin-top:0.4rem">総額 ¥72,000（税別）</div>
+          </div>
+        </div>
+        <p class="price-note">※ 料金はすべて税別表示です。<br>※ 時間・回数についてはご相談に応じます。<br>※ 初回の無料相談（30分）はお問い合わせフォームよりお申し込みください。</p>
+      </div>
+      <div style="padding-top:0.5rem">
+        <a href="index.html#contact" class="btn btn-primary" style="display:block;text-align:center;margin-bottom:1rem">無料相談を申し込む</a>
+        <a href="index.html#contact" class="btn btn-outline" style="display:block;text-align:center">お問い合わせ</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- エグゼクティブコーチング -->
+<section id="executive" class="section executive-bg">
+  <div class="section-inner">
+    <div class="section-label">Executive Coaching</div>
+    <h2 class="section-title">エグゼクティブ・<br>リーダーシップコーチング</h2>
+    <div class="executive-card">
+      <div class="executive-label">Executive / Leadership Coaching</div>
+      <div class="executive-title">経営者・上級管理職向けの<br>カスタマイズ設計プログラム</div>
+      <div class="executive-features">
+        <div class="executive-feature">
+          <div class="executive-feature-dot"></div>
+          <div class="executive-feature-text"><strong>役割・ミッションに応じたカスタマイズ</strong><br>TLC 360フィードバックをはじめとするリーダーシップツールをコンテキストに応じてカスタマイズして使用。データに基づく深い自己理解と、具体的な成長課題の特定をサポートします。所属企業で導入済みのツールとの連携にも対応します。</div>
+        </div>
+        <div class="executive-feature">
+          <div class="executive-feature-dot"></div>
+          <div class="executive-feature-text"><strong>マネジメントと人事責任者経験のあるコーチによる伴走</strong><br>組織の立ち上げ、急成長期のスケール、グローバルPMIなど、リーダーシップの現場を当事者として経験してきたコーチだからこそ、あなたの状況をリアルに理解した上で伴走します。</div>
+        </div>
+      </div>
+      <div class="executive-price">
+        <span class="executive-price-val">¥20,000〜</span>
+        <span class="executive-price-unit">/ 時間（税別）</span>
+      </div>
+      <div class="executive-note">カスタマイズ設計となるため、詳細はご相談ください。</div>
+      <a href="index.html#contact" class="btn btn-outline">詳細を相談する</a>
+    </div>
+  </div>
+</section>
+
+<!-- VOICES -->
+<section class="section" style="background:var(--light)">
+  <div class="section-inner">
+    <div class="section-label">Voice</div>
+    <h2 class="section-title">クライアントの<em>声</em></h2>
+    <div style="border:1px dashed var(--border);padding:3rem;text-align:center">
+      <p style="font-size:0.8rem;color:var(--muted);font-weight:300;line-height:2">クライアントの声は準備中です。<br>近日公開予定。</p>
+    </div>
+  </div>
+</section>
+
+<!-- スタンス・守秘義務 -->
+<section class="section stance">
+  <div class="section-inner">
+    <div class="section-label">Stance</div>
+    <h2 class="section-title" style="margin-bottom:1.5rem">コーチングに対する<em>スタンス</em></h2>
+    <p class="stance-text">人はもともと創造力と才知にあふれ、欠けることのない存在である——Co-Active Training Institute（CTI）のこの理念をベースに、クライアントの存在と力を信じてサポートします。</p>
+    <p class="stance-text" style="margin-top:1.2rem">コーチングはクライアントの自己成長・自己実現を目的としたパートナーシップです。クライアントも受け身にならず、自らにとって最適なパートナーシップを主体的に築いていくことが求められます。</p>
+    <div class="stance-note">
+      ※ コーチはクライアントがセッションの中で話した内容を、クライアント本人の許可なく他言しないという守秘義務を負っています。
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Momentum Lab</div>
+  <div class="footer-note">© 2026 Miki Matsuike. All rights reserved.</div>
+</footer>
+
+</body>
+</html>
