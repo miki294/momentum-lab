@@ -45,8 +45,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 3rem;display:
 .hero-catch{font-family:'Noto Serif JP',sans-serif;font-size:clamp(1rem,1.4vw,1.15rem);line-height:2.1;font-weight:300;margin-bottom:3rem;color:var(--charcoal)}
 .hero-catch em{font-style:normal;color:var(--sage-dark);font-weight:500}
 .hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
-.btn{display:inline-block;padding:0.85rem 2rem;font-size:0.78rem;letter-spacing:0.12em;text-decoration:none;transition:all 0.3s;cursor:pointer;font-family:'Noto Sans JP',sans-serif;border:none;white-space:nowrap}
+.btn{display:inline-block;padding:0.85rem 2rem;font-size:0.78rem;letter-spacing:0.12em;text-decoration:none;transition:all 0.3s;cursor:pointer;font-family:'Noto Sans JP',sans-serif;border:none;white-space:nowrap;min-width:220px;text-align:center}
+.btn:visited{color:inherit}
 .btn-primary{background:var(--sage);color:white}
+.btn-primary:visited{color:white}
 .btn-primary:hover{background:var(--sage-dark)}
 .btn-outline{background:transparent;color:var(--charcoal);border:1px solid rgba(44,44,42,0.35)}
 .btn-outline:hover{background:var(--charcoal);color:var(--cream)}
@@ -149,9 +151,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 3rem;display:
 .contact-card-title{font-family:'Noto Serif JP',sans-serif;font-size:1rem;color:var(--cream);margin-bottom:0.8rem;font-weight:400}
 .contact-card-desc{font-size:0.78rem;color:rgba(250,250,247,0.5);line-height:2;font-weight:300;margin-bottom:2rem}
 .btn-sage{background:var(--sage);color:white;font-size:0.75rem}
+.btn-sage:visited{color:white}
 .btn-sage:hover{background:#5d9e9c}
-.btn-white{background:transparent;color:var(--cream);border:1px solid rgba(255,255,255,0.3);font-size:0.75rem}
-.btn-white:hover{background:rgba(255,255,255,0.08)}
+.btn-white{background:var(--sage-dark);color:white;font-size:0.75rem}
+.btn-white:visited{color:white}
+.btn-white:hover{background:#2d5047}
 .contact-email{margin-top:3rem;text-align:center;font-size:0.75rem;color:rgba(250,250,247,0.4);letter-spacing:0.1em}
 .contact-email a{color:rgba(250,250,247,0.6);text-decoration:none}
 .contact-email a:hover{color:var(--cream)}
@@ -238,7 +242,9 @@ footer{background:var(--charcoal);border-top:0.5px solid rgba(255,255,255,0.06);
       </div>
       <div class="about-body fade-in">
         <p class="about-lead">
-          どれほど優れた戦略も、実行する<strong>「人」が自らの願いや価値観と一致した瞬間</strong>にしか、真の爆発力は生まれない。
+          どれほど優れた戦略も、実行する人が自分ごととして動いてはじめて、結果になる。
+        </p>
+        <p class="about-text">戦略はある。でも、何か足りない。その「勿体なさ」を、現場で何度も見てきました。そしてその逆も——個々人が想いを持ち、組織が本当に動いていくあの瞬間も。</p>
         </p>
         <p class="about-text">
           組織の外側（戦略）と内側（人・仕組み）の両面から、数々の事業推進の最前線を歩んできました。戦略コンサルタント、事業会社での経営企画責任者、デジタル組織の立ち上げと拡大、スタートアップのVP of HRと、20年以上にわたり「戦略を描き、組織に落とし込み、人を動かす」ことを一貫してやり続けてきました。
@@ -350,13 +356,13 @@ footer{background:var(--charcoal);border-top:0.5px solid rgba(255,255,255,0.06);
         <div class="contact-card-label">Coaching</div>
         <div class="contact-card-title">コーチングのご相談</div>
         <p class="contact-card-desc">初回は無料の相談セッション（30分）をご用意しています。コーチングが合うかどうか、一緒に確認しましょう。</p>
-        <a href="https://docs.google.com/forms/coaching" target="_blank" class="btn btn-sage">無料相談を申し込む</a>
+        <a href="https://forms.gle/sB6pno1XPArmALrd8" target="_blank" class="btn btn-sage">無料相談を申し込む</a>
       </div>
       <div class="contact-card">
         <div class="contact-card-label">Consulting</div>
         <div class="contact-card-title">組織・人事のご相談</div>
         <p class="contact-card-desc">組織開発・人事制度・採用戦略・業務委託など、まずはお気軽にご相談ください。</p>
-        <a href="https://docs.google.com/forms/consulting" target="_blank" class="btn btn-white">相談・問い合わせをする</a>
+        <a href="https://forms.gle/CC5sgEgZ8qZM4JdV8" target="_blank" class="btn btn-white">相談・問い合わせをする</a>
       </div>
     </div>
     <div class="contact-email">
